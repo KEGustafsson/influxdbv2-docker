@@ -6,8 +6,6 @@ If Signal K is not runnign is same computer, change telegraf.conf setting first.
 
 Run run_me_1st.sh and enter username, password, org and bucket for Influxdb.
 
-Influxdb port = 8087
+Influxdb port = 8087, Grafana port = 3002
 
-Grafana port = 3002
-
-When Influxdb is runnign, generate token from Grafana and add data source (Query Language = Flux).
+When Influxdb is running, generate token for Grafana and add data source (Note: Query Language = Flux).
