@@ -1,4 +1,4 @@
-# influxdbv2-docker
+# influxdbv2-test-docker
 
 Telegraf, Influxdb v2 and Grafana in docker for Signal K testing.
 
