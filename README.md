@@ -2,7 +2,7 @@
 
 Telegraf, Influxdb v2 and Grafana in docker for Signal K testing.
 
-If Signal K is not runnign is same computer, change telegraf.conf setting first. Also if you want to read other path than vessels.self.
+If Signal K is not runnign in same computer, change telegraf.conf setting (url) first. Also if you want to read other path than vessels.self.
 
 Run run_me_1st.sh and enter username, password, org and bucket for Influxdb.
 
