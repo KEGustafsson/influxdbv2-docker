@@ -1,0 +1,51 @@
+version: "2.2"
+
+services:
+  influxdbv2_test:
+    image: quay.io/influxdb/influxdb:v2.0.3
+    container_name: influxdbv2_test
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - "8087:8086"
+    volumes:
+      - $PWD/volume/influxdbv2:/root/.influxdbv2
+    logging:
+      options:
+        max-size: 10m
+
+  grafana_test:
+    image: grafana/grafana:latest
+    container_name: grafana_test
+    restart: unless-stopped
+    network_mode: bridge
+    user: "0:0"
+    ports:
+      - "3002:3000"
+    links:
+      - influxdbv2_test
+    volumes:
+      - $PWD/volume/grafana/data:/var/lib/grafana
+      - $PWD/volume/grafana/conf:/usr/share/grafana/conf
+    logging:
+      options:
+        max-size: 10m
+
+  telegraf_test:
+    container_name: telegraf_test
+    image: telegraf:latest
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      HOST_PROC: /rootfs/proc
+      HOST_SYS: /rootfs/sys
+      HOST_ETC: /rootfs/etc
+    volumes:
+      - $PWD/volume/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /sys:/rootfs/sys:ro
+      - /proc:/rootfs/proc:ro
+      - /etc:/rootfs/etc:ro
+    logging:
+      options:
+        max-size: 10m
