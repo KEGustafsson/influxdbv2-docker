@@ -57,6 +57,7 @@ services:
     network_mode: host
     volumes:
       - /dev:/dev/hostdev
+      - $PWD/volume/signalk_conf:/home/node/.signalk
     entrypoint: sh /home/node/signalk/startup.sh
     privileged: true
     logging:
