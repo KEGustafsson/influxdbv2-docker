@@ -49,3 +49,16 @@ services:
     logging:
       options:
         max-size: 10m
+        
+  signalk-server:
+    image: signalk/signalk-server:latest
+    container_name: signalk-server
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /dev:/dev/hostdev
+    entrypoint: sh /home/node/signalk/startup.sh
+    privileged: true
+    logging:
+      options:
+        max-size: 10m
