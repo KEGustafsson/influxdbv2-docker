@@ -4,6 +4,8 @@ mkdir -p $PWD/volume/influxdbv2
 mkdir -p $PWD/volume/grafana/data
 mkdir -p $PWD/volume/grafana/conf
 mkdir -p $PWD/volume/telegraf
+mkdir -p $PWD/volume/signalk_conf
+
 cp $PWD/telegraf.conf $PWD/volume/telegraf/telegraf.conf
 
 echo "Select Influxdb v2 username"
