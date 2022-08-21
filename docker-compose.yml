@@ -2,7 +2,7 @@ version: "2.2"
 
 services:
   influxdbv2_test:
-    image: quay.io/influxdb/influxdb:v2.0.3
+    image: influxdb:latest 
     container_name: influxdbv2_test
     restart: unless-stopped
     network_mode: bridge
