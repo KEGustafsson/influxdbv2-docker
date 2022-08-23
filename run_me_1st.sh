@@ -9,7 +9,7 @@ cp $PWD/telegraf.conf $PWD/volume/telegraf/telegraf.conf
 echo "Select Influxdb v2 username"
 read username
 echo
-echo "Select Influxdb v2 password"
+echo "Select Influxdb v2 password, must be 8 char long"
 read password
 echo
 echo "Select Influxdb v2 organization"
