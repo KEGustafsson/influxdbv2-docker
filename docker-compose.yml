@@ -9,7 +9,7 @@ services:
     ports:
       - "8087:8086"
     volumes:
-      - $PWD/volume/influxdbv2:/root/.influxdbv2
+      - $PWD/volume/influxdbv2:/var/lib/influxdb2
     logging:
       options:
         max-size: 10m
